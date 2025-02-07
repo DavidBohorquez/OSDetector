@@ -12,19 +12,21 @@ pipeline {
                 sh 'apt-get update'
                 sh 'apt-get install -y python3 python3-venv python3-pip'
 
-                sh '''
+                sh '''#!/bin/bash
                     python3 -m venv venv
                     source venv/bin/activate
+                    python3 -m pip install --upgrade pip
                 '''
-
-                sh 'python3 -m pip install --upgrade pip'
             }
         }
 
         stage('Run Script') {
             steps {
                 // Exécuter le script Python
-                sh 'python3 OSDetector.py'
+                sh '''#!/bin/bash
+                    source venv/bin/activate
+                    python3 OSDetector.py
+                '''
             }
         }
     }
