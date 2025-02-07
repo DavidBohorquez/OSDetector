@@ -24,7 +24,6 @@ pipeline {
         stage('Run Script') {
             steps {
                 // Exécuter le script Python
-                sh 'source venv/bin/activate'
                 sh 'python3 OSDetector.py'
             }
         }
