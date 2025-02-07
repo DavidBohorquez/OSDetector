@@ -1,5 +1,5 @@
 pipeline {
-    agen any
+    agent any
     stages {
         stage('Clonage du dépôt GitHub') {
             steps {
