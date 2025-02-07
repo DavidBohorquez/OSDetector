@@ -25,7 +25,7 @@ pipeline {
                 // Exécuter le script Python
                 sh '''#!/bin/bash
                     source venv/bin/activate
-                    python3 OSDetector.py
+                    python3 os_detector.py
                 '''
             }
         }
